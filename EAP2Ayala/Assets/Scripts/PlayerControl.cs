@@ -8,17 +8,9 @@ public class PlayerControl : MonoBehaviour
 
     public int maxHealth = 5;
 
-    public GameObject projectilePrefab;
-
   
 
-    public int health { get { return currentHealth; } }
-    int currentHealth;
-
-    public float timeInvincible = 2.0f;
-    bool isInvincible;
-    float invincibleTimer;
-
+   
     Rigidbody2D rigidbody2d;
     float horizontal;
     float vertical;
@@ -30,9 +22,6 @@ public class PlayerControl : MonoBehaviour
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
       
-
-        currentHealth = maxHealth;
-
     }
 
     // Update is called once per frame
@@ -43,22 +32,14 @@ public class PlayerControl : MonoBehaviour
 
         Vector2 move = new Vector2(horizontal, vertical);
 
-        
-
-
-        if (isInvincible)
-        {
-            invincibleTimer -= Time.deltaTime;
-            if (invincibleTimer < 0)
-                isInvincible = false;
-        }
-
         if (Input.GetKeyDown(KeyCode.C))
         {
             Launch();
         }
 
-       
+
+
+
     }
 
     void FixedUpdate()
@@ -72,18 +53,6 @@ public class PlayerControl : MonoBehaviour
 
     public void ChangeHealth(int amount)
     {
-        if (amount < 0)
-        {
-            if (isInvincible)
-                return;
-
-            isInvincible = true;
-            invincibleTimer = timeInvincible;
-
-        }
-
-        currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
-
     }
 
     void Launch()
@@ -92,8 +61,6 @@ public class PlayerControl : MonoBehaviour
 
         Projectile projectile = projectileObject.GetComponent<Projectile>();
         
-
-
     }
 
 }
