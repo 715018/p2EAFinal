@@ -8,9 +8,11 @@ public class PlayerControl : MonoBehaviour
 
     public int maxHealth = 5;
 
-  
+    public GameObject projectilePrefab;
 
-   
+    Vector2 lookDirection = new Vector2(1, 0);
+
+
     Rigidbody2D rigidbody2d;
     float horizontal;
     float vertical;
@@ -21,7 +23,6 @@ public class PlayerControl : MonoBehaviour
     void Start()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
-      
     }
 
     // Update is called once per frame
@@ -32,34 +33,42 @@ public class PlayerControl : MonoBehaviour
 
         Vector2 move = new Vector2(horizontal, vertical);
 
-        if (Input.GetKeyDown(KeyCode.C))
+        if (!Mathf.Approximately(move.x, 0.0f) || !Mathf.Approximately(move.y, 0.0f))
         {
-            Launch();
+            lookDirection.Set(move.x, move.y);
+            lookDirection.Normalize();
+
         }
 
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                Launch();
+            }
+
 
 
 
     }
 
-    void FixedUpdate()
-    {
-        Vector2 position = rigidbody2d.position;
-        position.x = position.x + speed * horizontal * Time.deltaTime;
-        position.y = position.y + speed * vertical * Time.deltaTime;
+        void FixedUpdate()
+        {
+            Vector2 position = rigidbody2d.position;
+            position.x = position.x + speed * horizontal * Time.deltaTime;
+            position.y = position.y + speed * vertical * Time.deltaTime;
 
-        rigidbody2d.MovePosition(position);
+            rigidbody2d.MovePosition(position);
+        }
+
+        public void ChangeHealth(int amount)
+        {
+        }
+
+        void Launch()
+        {
+            GameObject projectileObject = Instantiate(projectilePrefab, rigidbody2d.position + Vector2.up * 0.5f, Quaternion.identity);
+
+            Projectile projectile = projectileObject.GetComponent<Projectile>();
+            projectile.Launch(lookDirection, 300);
+        }
     }
-
-    public void ChangeHealth(int amount)
-    {
-    }
-
-    void Launch()
-    {
-        
-        
-    }
-
-}
 
