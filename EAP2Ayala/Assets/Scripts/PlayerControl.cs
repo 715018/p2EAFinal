@@ -15,14 +15,21 @@ public class PlayerControl : MonoBehaviour
 
     Rigidbody2D rigidbody2d;
     float horizontal;
-   
 
-    
+    private Animator animator
+
+
+
 
     // Start is called before the first frame update
     void Start()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
+    }
+
+    private void Awake();
+    {
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
