@@ -15,7 +15,7 @@ public class PlayerControl : MonoBehaviour
 
     Rigidbody2D rigidbody2d;
     float horizontal;
-    float vertical;
+   
 
     
 
@@ -29,17 +29,11 @@ public class PlayerControl : MonoBehaviour
     void Update()
     {
         horizontal = Input.GetAxis("Horizontal");
-        vertical = Input.GetAxis("Vertical");
+       
 
-        Vector2 move = new Vector2(horizontal, vertical);
+        
 
-        if (!Mathf.Approximately(move.x, 0.0f) || !Mathf.Approximately(move.y, 0.0f))
-        {
-            lookDirection.Set(move.x, move.y);
-            lookDirection.Normalize();
-
-        }
-
+      
             if (Input.GetKeyDown(KeyCode.C))
             {
                 Launch();
@@ -54,7 +48,7 @@ public class PlayerControl : MonoBehaviour
         {
             Vector2 position = rigidbody2d.position;
             position.x = position.x + speed * horizontal * Time.deltaTime;
-            position.y = position.y + speed * vertical * Time.deltaTime;
+            
 
             rigidbody2d.MovePosition(position);
         }
