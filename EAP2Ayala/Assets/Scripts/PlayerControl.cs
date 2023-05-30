@@ -55,11 +55,6 @@ public class PlayerControl : MonoBehaviour
                 Launch();
         }
 
-        if(transform.position.x < -20)
-        {
-            transform.position = new Vector3(-5, transform.position.y, transform.position.x);
-        }
-
 
     }
 
