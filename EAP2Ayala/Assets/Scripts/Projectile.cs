@@ -31,10 +31,11 @@ public class Projectile : MonoBehaviour
         rigidbody2d.AddForce(direction * force);
     }
 
-    void OnCollisionEnter2D(Collision2D other)
+    
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        //we also add a debug log to know what the projectile touch
-        Debug.Log("Projectile Collision with " + other.gameObject);
+
+
         Destroy(gameObject);
     }
 }
