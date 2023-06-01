@@ -45,11 +45,9 @@ public class PlayerControl : MonoBehaviour
             lookDirection.Normalize();
         }
 
-
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.C))
         {
-            // Launch a projectile from the player
-            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+            Launch();
         }
     }
 
@@ -62,5 +60,14 @@ public class PlayerControl : MonoBehaviour
 
             rigidbody2d.MovePosition(position);
         }
+
+    void Launch()
+    {
+        GameObject projectileObject = Instantiate(projectilePrefab, rigidbody2d.position + Vector2.up * 0.5f, Quaternion.identity);
+
+        Projectile projectile = projectileObject.GetComponent<Projectile>();
+        projectile.Launch(lookDirection, 800);
+        
+    }
 }
 

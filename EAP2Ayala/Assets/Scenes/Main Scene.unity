@@ -402,9 +402,21 @@ PrefabInstance:
       propertyPath: m_Offset.x
       value: -0.3392757
       objectReference: {fileID: 0}
+    - target: {fileID: 7875990418383275816, guid: 74fa7a09350cda84bb2b81b2901d33d3, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.x
+      value: 0.65252846
+      objectReference: {fileID: 0}
+    - target: {fileID: 7875990418383275816, guid: 74fa7a09350cda84bb2b81b2901d33d3, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.51466626
+      objectReference: {fileID: 0}
+    - target: {fileID: 7875990418383275816, guid: 74fa7a09350cda84bb2b81b2901d33d3, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7875990418383275817, guid: 74fa7a09350cda84bb2b81b2901d33d3, type: 3}
       propertyPath: speed
-      value: 12
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7875990418383275818, guid: 74fa7a09350cda84bb2b81b2901d33d3, type: 3}
       propertyPath: m_Name
@@ -428,7 +440,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7875990418383275821, guid: 74fa7a09350cda84bb2b81b2901d33d3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -17.81
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 7875990418383275821, guid: 74fa7a09350cda84bb2b81b2901d33d3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -461,6 +473,14 @@ PrefabInstance:
     - target: {fileID: 7875990418383275821, guid: 74fa7a09350cda84bb2b81b2901d33d3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7875990418383275822, guid: 74fa7a09350cda84bb2b81b2901d33d3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 516392463, guid: 29710e03afcf2624088f0024babd4cae, type: 3}
+    - target: {fileID: 7875990418383275822, guid: 74fa7a09350cda84bb2b81b2901d33d3, type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7875990418383275823, guid: 74fa7a09350cda84bb2b81b2901d33d3, type: 3}
       propertyPath: m_Constraints
