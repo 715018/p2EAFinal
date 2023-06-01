@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveDown : MonoBehaviour
+public class NewBehaviourScript : MonoBehaviour
 {
-    public float speed = 10.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +13,6 @@ public class MoveDown : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.down * Time.deltaTime * speed);
+        
     }
 }
