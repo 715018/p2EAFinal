@@ -17,8 +17,6 @@ public class PlayerControl : MonoBehaviour
     float horizontal;
     float vertical;
 
-    Animator animator;
-
     
 
 
@@ -28,8 +26,6 @@ public class PlayerControl : MonoBehaviour
     void Start()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
-
     }
 
 
@@ -50,15 +46,14 @@ public class PlayerControl : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-                Launch();
+            // Launch a projectile from the player
+            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
         }
-
-
     }
 
-        void FixedUpdate()
+    void FixedUpdate()
         {
             Vector2 position = rigidbody2d.position;
             position.x = position.x + speed * horizontal * Time.deltaTime;
@@ -67,17 +62,5 @@ public class PlayerControl : MonoBehaviour
 
             rigidbody2d.MovePosition(position);
         }
-
-        public void ChangeHealth(int amount)
-        {
-        }
-
-        void Launch()
-        {
-            GameObject projectileObject = Instantiate(projectilePrefab, rigidbody2d.position + Vector2.up * 0.5f, Quaternion.identity);
-
-            Projectile projectile = projectileObject.GetComponent<Projectile>();
-            projectile.Launch(lookDirection, 850);
-        }
-    }
+}
 
