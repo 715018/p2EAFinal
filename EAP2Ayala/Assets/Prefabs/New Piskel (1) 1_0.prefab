@@ -11,12 +11,13 @@ GameObject:
   - component: {fileID: 7351918760412450436}
   - component: {fileID: 4181144020833600702}
   - component: {fileID: 5245289547706051262}
-  - component: {fileID: 205827794476427096}
   - component: {fileID: 5686011045040477394}
   - component: {fileID: 3129875289375223660}
+  - component: {fileID: -8161379180850119872}
+  - component: {fileID: 792445518766888611}
   m_Layer: 0
   m_Name: New Piskel (1) 1_0
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,18 +102,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
---- !u!114 &205827794476427096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7136315957641892465}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b91fb26a769f64b499c403587a2ba926, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &5686011045040477394
 Rigidbody2D:
   serializedVersion: 4
@@ -160,3 +149,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.1545499, y: 0.2770724}
   m_EdgeRadius: 0
+--- !u!114 &-8161379180850119872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7136315957641892465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46135139debe9ee4aa8fc4216764c7e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &792445518766888611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7136315957641892465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07d334a181cca6343b048868e8af9463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
