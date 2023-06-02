@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: -5734655943739698907}
   - component: {fileID: 9029658385806214448}
   - component: {fileID: 6521719697864464968}
+  - component: {fileID: 6852819640813496002}
+  - component: {fileID: 5555627976643514896}
   m_Layer: 0
   m_Name: skeleton
   m_TagString: Enemy
@@ -257,3 +259,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6852819640813496002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065088422377041363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46135139debe9ee4aa8fc4216764c7e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5555627976643514896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065088422377041363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07d334a181cca6343b048868e8af9463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

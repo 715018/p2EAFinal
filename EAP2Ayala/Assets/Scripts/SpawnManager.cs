@@ -6,7 +6,7 @@ public class SpawnManager : MonoBehaviour
 {
     public GameObject[] enemyPrefabs;
     private float spawnRangeX = 20;
-    private float spawnPosY = 20;
+    private float spawnPosY = 30;
     private float startDelay = 2;
     private float spawnInterval = 1.5f;
 
