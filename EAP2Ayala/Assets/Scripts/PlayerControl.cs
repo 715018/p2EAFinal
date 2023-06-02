@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
-    [SerializeField] private float movementSpeed = 3.0f;
+    public float speed = 3.0f;
 
-    private Vector2 movement;
+    public int maxHealth = 5;
 
     public GameObject projectilePrefab;
 
@@ -14,9 +14,9 @@ public class PlayerControl : MonoBehaviour
 
 
     Rigidbody2D rigidbody2d;
-    
+    float horizontal;
+    float vertical;
 
-    public Animator animator;
     
 
 
@@ -26,7 +26,6 @@ public class PlayerControl : MonoBehaviour
     void Start()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
     }
 
 
@@ -35,27 +34,31 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movement = new Vector2(Input.GetAxis("Horizontal"), 0).normalized;
-        animator.SetFloat("Speed", Mathf.Abs(movement.magnitude * movementSpeed));
+        horizontal = Input.GetAxis("Horizontal");
+        vertical = Input.GetAxis("Vertical");
 
-        
+        Vector2 move = new Vector2(horizontal, vertical);
+
+        if (!Mathf.Approximately(move.x, 0.0f) || !Mathf.Approximately(move.y, 0.0f))
+        {
+            lookDirection.Set(move.x, move.y);
+            lookDirection.Normalize();
+        }
 
         if (Input.GetKeyDown(KeyCode.C))
         {
             Launch();
         }
-
-        bool flipped = movement.x < 0;
-        this.transform.rotation = Quaternion.Euler(new Vector3(0f, flipped ? 180f : 0f, 0f));
     }
 
     void FixedUpdate()
         {
-            if (movement !=Vector2.zero)
-            {
-                var xMovement = movement.x * movementSpeed * Time.deltaTime;
-                this.transform.Translate(new Vector3(xMovement, 0), Space.World);
-            }
+            Vector2 position = rigidbody2d.position;
+            position.x = position.x + speed * horizontal * Time.deltaTime;
+            position.y = position.y + speed * vertical * Time.deltaTime;
+
+
+            rigidbody2d.MovePosition(position);
         }
 
     void Launch()
